@@ -1,0 +1,84 @@
+<div class="content-body">
+    <div class="container-fluid mt-3">
+		<i class="icon-note menu-icon btn-lg"></i><span class="h3"> Información de Usuario</span>
+		<p>
+        <div class="row">
+            <div class="col-lg-4 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media align-items-center mb-4">
+                            <img class="mr-3 img-circle" src="<%= @user.imglote_url %>" width="80" height="80" alt="">
+                            <div class="media-body">
+                                <h3 class="mb-0"><%= @user.nombre %> <%= @user.apellido_paterno %></h3>
+                                <p class="text-muted mb-0"><%= @user.correo %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+
+			<div class="col-lg-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <%= form_for :user, :url => { :action => :update, :id => @user.id }, :method => :put do |user| %>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label>Nombres</label>
+                                        <input type="text" name="user[nombre]" class="form-control" required="" value="<%= @user.nombre %>">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Apellido Paterno</label>
+                                        <input type="text" name="user[apellido_paterno]" class="form-control" required="" value="<%= @user.apellido_paterno %>">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Apellido Materno</label>
+                                        <input type="text" name="user[apellido_materno]" class="form-control" required="" value="<%= @user.apellido_materno %>"">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label>Correo Electronico</label>
+                                        <input type="email" name="user[correo]" class="form-control" required="" value="<%= @user.correo %>">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Permiso</label>
+                                        <select name="user[nivel]" id="inputState" class="form-control">
+                                            <option></option>
+                                            <% @permisos.each do |p| %>
+                                                <option <% if @user.nivel == p.descripcion %>selected=""<% end %>><%= p.descripcion %></option>
+                                            <% end %>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Estado</label>
+                                        <input type="text" name="user[estado]" class="form-control" value="<%= @user.estado %>">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label>Empresa</label>
+                                        <input type="text" name="user[empresa_id]" class="form-control" value="<%= @user.empresa_id %>">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Clave</label>
+                                        <input type="password" name="user[clave]" class="form-control" value="<%= @user.clave %>">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Seleccionar Foto</label>
+                                        <%= user.file_field :imglote, class:"form-control-file", accept:"image/png, image/jpeg" %>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success btn-lg" id="toastr-success-top-right">Grabar</button>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>

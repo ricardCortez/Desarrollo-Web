@@ -1,0 +1,63 @@
+<div class="nk-sidebar" id="cus-nk-sidebar">           
+    <div class="nk-nav-scroll">
+        <ul class="metismenu" id="menu">
+            <% if logged_in? && "Administrador"[current_user.nivel] %>
+                <li class="mega-menu mega-menu-sm">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="icon-settings menu-icon"></i><span class="nav-text">Administrador</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href=<%= users_new_path %>>Registrar usuario</a></li>
+                        <li><a href=<%= users_show_path %>>Administrar usuario</a></li>
+                    </ul>
+                </li>
+            <% end %>
+
+            <% if logged_in? && "Administrador/Digitador"[current_user.nivel] %>
+                <li class="mega-menu mega-menu-sm">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="icon-folder menu-icon"></i><span class="nav-text">Digitalización</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href=<%= digitals_new_path %>>Nuevo registro</a></li>
+                        <li><a href=<%= digitals_show_path %>>Consultar</a></li>
+                    </ul>
+                </li>
+            <% end %>
+
+            <% if logged_in? && "Administrador/Indizador"[current_user.nivel] %>
+                <li class="mega-menu mega-menu-sm">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="icon-layers menu-icon"></i><span class="nav-text">Indización</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href=<%= indizacions_show_path %>>Consultar</a></li>
+                    </ul>
+                </li>
+            <% end %>
+
+            <% if logged_in? && "Administrador/Validador"[current_user.nivel] %>
+                <li class="mega-menu mega-menu-sm">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="icon-check menu-icon"></i><span class="nav-text">Verificación</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href=<%= reviews_show_path %>>Consultar</a></li>
+                    </ul>
+                </li>
+            <% end %>
+
+            <% if logged_in? && "Administrador"[current_user.nivel] %>
+                <li class="mega-menu mega-menu-sm">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="icon-printer menu-icon"></i><span class="nav-text">Reporte</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href=<%= reports_show_path %>>Estado</a></li>
+                        <li><a href=<%= reports_indicator_path %>>Indicador</a></li>
+                    </ul>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</div>

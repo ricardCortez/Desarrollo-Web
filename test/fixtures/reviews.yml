@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  resolucion: MyString
+  observacion: MyText
+  doc_id: 1
+  user_id: 1
+
+two:
+  resolucion: MyString
+  observacion: MyText
+  doc_id: 1
+  user_id: 1

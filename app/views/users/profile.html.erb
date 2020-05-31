@@ -1,0 +1,38 @@
+<div class="content-body" style="min-height: 1100px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-xl-4">
+            </div>
+            <div class="col-lg-4 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media align-items-center mb-4">
+                            <img class="mr-3 img-circle" src="<%= current_user.imglote_url %>" width="80" height="80" alt="">
+                            <div class="media-body">
+                                <h3 class="mb-0"><%= current_user.nombre %> <%= current_user.apellido_paterno %> <%= current_user.apellido_materno %></h3>
+                                <p class="text-muted mb-0"><%= current_user.correo %></p>
+                            </div>
+                        </div>
+                        
+                        <h4></h4>
+                        <ul class="card-profile__info">
+                            <li class="mb-1">
+                                <strong class="text-dark mr-4">Permiso</strong>
+                                <span><%= current_user.nivel %></span>
+                            </li>
+                            <li>
+                                <strong class="text-dark mr-4">Estado</strong>
+                                <span><%= current_user.estado %></span>
+                            </li>
+                            <li>
+                                <strong class="text-dark mr-4">Empresa</strong>
+                                <span><%= current_user.empresa_id %></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>

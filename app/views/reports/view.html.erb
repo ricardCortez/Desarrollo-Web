@@ -1,0 +1,145 @@
+<div class="content-body" style="min-height: 1100px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-xl-3">
+            </div>
+            <div class="col-lg-4 col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media align-items-center mb-4">
+                            <div class="media-body">
+                                <h3 class="mb-0">Digitalización</h3>
+                            </div>
+                        </div>
+                        
+                        <h4></h4>
+
+                        <% @digital.each do |digital| %>
+                            <ul class="card-profile__info">
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Número de Lote :</strong>
+                                    <span><%= digital.nro_lote %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Documento :</strong>
+                                    <span><a href="<%= digital.imglote_url %>" target="_blank" class="text-primary"><%= digital.documento %></a></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Número de Páginas :</strong>
+                                    <span><%= digital.nro_pages %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Registrado por :</strong>
+                                    <span><%= digital.user_name %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Fecha de registro :</strong>
+                                    <span><%= digital.created_at %></span>
+                                </li>
+                            </ul>
+                        <% end %>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-xl-3">
+            </div>
+            <div class="col-lg-4 col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media align-items-center mb-4">
+                            <div class="media-body">
+                                <h3 class="mb-0">Indización</h3>
+                            </div>
+                        </div>
+                        
+                        <h4></h4>
+
+                        <% @indizacion.each do |indizacion| %>
+                            <ul class="card-profile__info">
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Tipo de Documento :</strong>
+                                    <span><%= indizacion.tipo_doc %></span>
+                                </li>
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Número del Documento :</strong>
+                                    <span><%= indizacion.num_doc %></span>
+                                </li>
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Fecha del documento :</strong>
+                                    <span><%= indizacion.fecha_doc %></span>
+                                </li>
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Inicio de Folio :</strong>
+                                    <span><%= indizacion.ini_fol %></span>
+                                </li>
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Fin de Folio :</strong>
+                                    <span><%= indizacion.fin_fol %></span>
+                                </li>
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Inicio de Documento :</strong>
+                                    <span><%= indizacion.ini_doc %></span>
+                                </li>
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Fin de Documento :</strong>
+                                    <span><%= indizacion.fin_doc %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Registrado por :</strong>
+                                    <span><%= indizacion.user_name %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Fecha de registro :</strong>
+                                    <span><%= indizacion.created_at %></span>
+                                </li>
+                            </ul>
+                        <% end %>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-xl-3">
+            </div>
+            <div class="col-lg-4 col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media align-items-center mb-4">
+                            <div class="media-body">
+                                <h3 class="mb-0">Verificación</h3>
+                            </div>
+                        </div>
+                        
+                        <h4></h4>
+
+                        <% @review.each do |review| %>
+                            <ul class="card-profile__info">
+                                <li class="mb-1">
+                                    <strong class="text-dark mr-4">Resolución :</strong>
+                                    <span><%= review.resolucion %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Observación :</strong>
+                                    <span><%= review.observacion %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Registrado por :</strong>
+                                    <span><%= review.user_name %></span>
+                                </li>
+                                <li>
+                                    <strong class="text-dark mr-4">Fecha de registro :</strong>
+                                    <span><%= review.created_at %></span>
+                                </li>
+                            </ul>
+                        <% end %>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
